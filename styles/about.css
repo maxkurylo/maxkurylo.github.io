@@ -1,0 +1,32 @@
+.my-photo {
+	border-radius: 50%;
+	max-width: 100%;
+}
+
+.about-description {
+	text-align: left;
+	font-size: 1.4em;
+}
+
+.about-text-delimiter {
+	margin-top: 50px;
+}
+
+.about-social {
+	text-align: left;
+}
+
+.about-social > a {
+	margin: 10px 7px;
+	color: #24292e
+}
+
+.about-social > a:first-child {
+	margin-left: 0px;
+}
+
+@media(max-width: 991px){
+	.about-description{
+		margin-top: 40px;
+	}
+}

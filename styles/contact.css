@@ -1,0 +1,116 @@
+form, .controls{
+	width: 100%;
+}
+
+.controls{
+	height: 100%;
+}
+
+.controls input,
+.controls textarea {
+	border-bottom: 2px solid transparent;
+}
+
+.controls input:focus,
+.controls textarea:focus {
+	border-bottom: 2px solid #009CCB
+}
+
+.control-group{
+	position: relative;
+}
+
+.nm{
+	min-height: 100px;
+	max-height: 100px;
+	width: 49.7%;
+	display: inline-block;
+}
+
+.nm:first-child{
+	padding-right: 30px;
+}
+
+.mes{
+	max-height: 200px;
+}
+
+input, textarea{
+	position: relative;
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1.4em;
+	padding: 20px;
+	padding-left: 65px
+}
+
+textarea{
+	resize: none;
+	height: 170px;
+}
+
+.fa-comment-o, .fa-envelope-o, .fa-user-o{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 15px;
+	margin-left: 20px;
+	font-size: 32px;
+	color: #BABABA;
+}
+
+@media(max-width: 992px){
+	.nm{
+		width: 100%;	}
+
+	.nm:first-child{
+		padding-right: 0px;
+	}
+}
+
+.form-actions{
+	float: right;
+}
+
+.form-actions > button {
+	font-size: 1.5em;
+	width: 150px;
+	padding: 15px 10px;
+	border: none;
+	border-radius: 2px;
+	transition: all .2s;
+	border-bottom: 2px solid transparent;
+}
+
+.form-actions > button:hover{
+	border-bottom: 2px solid #009CCB;
+}
+
+.fa-paper-plane-o{
+	font-size: 1em;
+	margin-right: 15px;
+	margin-left: -10px;
+}
+
+.help-block{
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	visibility: hidden;
+}
+.help-block>ul{
+	margin: 0px;
+	padding: 0px;
+	color: #FF6868;
+	list-style-type: none;
+	text-align: left;
+}
+.error>.help-block, .warning>.help-block{
+	visibility: visible;
+}
+
+#contact>h3{
+	line-height: 1.5;
+	margin-bottom: 70px;
+}

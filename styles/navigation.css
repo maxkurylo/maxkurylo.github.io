@@ -1,0 +1,121 @@
+.navbar{
+	color: #333;
+	transition: all .3s;
+	border: none;
+}
+
+.navbar-default{
+	background-color: transparent;
+}
+
+.navbar-brand{
+	font-size: 1.7em;
+	font-weight: 500;
+	color: #009CCB !important;
+	visibility: hidden;
+}
+
+.nav>li>a{
+	margin-top: 20px;
+	transition: all .3s;
+	color: #333 !important;
+	font-size: 1.6em;
+}
+
+.nav>li{
+	border-bottom: 2px solid transparent;
+}
+
+.nav>li:hover, .current{
+	border-color: #009CCB !important;
+}
+
+.nav>li>a:hover, .nav>li>a:focus{
+	background-color: transparent;
+}
+
+.navbar-collapse{
+	text-align: center !important;
+	margin: 0 auto;
+	border: none;
+}
+
+.not{
+	border: none !important;
+}
+
+@media(max-width: 768px){
+	.navbar-collapse{
+		background-color: rgba(250, 250, 250, .9);
+		max-width: 300px;
+		margin: 0 auto !important;
+	}
+}
+
+.sandwich{
+	border: none;
+	cursor: pointer;
+	height: 42px;
+	width: 47px;
+}
+.sandwich:hover, .sandwich:focus{
+	background-color: transparent !important;
+}
+
+.sw-topper {
+  position: relative;
+  top: 0;
+  width: 28px;
+  height: 3px;
+  background: currentColor;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-transition: -webkit-transform 0.5s, top 0.2s;
+          transition: transform 0.5s, top 0.2s;
+  display: block; }
+
+.sw-bottom {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 3px;
+  top: 6.6px;
+  background: currentColor;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-transition: -webkit-transform 0.5s, top 0.2s;
+          transition: transform 0.5s, top 0.2s;
+  -webkit-transition-delay: 0.2s, 0s;
+          transition-delay: 0.2s, 0s; }
+
+.sw-footer {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 3px;
+  top: 13.5px;
+  background: currentColor;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s; }
+
+.sandwich.active .sw-topper {
+  top: 9px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+.sandwich.active .sw-bottom {
+  top: 6px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+.sandwich.active .sw-footer {
+  opacity: 0;
+  top: 0;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
