@@ -67,7 +67,6 @@ typings/
 
 #macOs directory files
 .DS_Store
-.DS_Store?
 
 # development directories and files
 index.php
