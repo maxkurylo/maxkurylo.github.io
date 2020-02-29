@@ -1,0 +1,320 @@
+/*body {*/
+ /*background-color: #f7f7f7;*/
+/*}*/
+
+body {
+    background-color : transparent !important;
+}
+
+.calc-block {
+    background-color: #fcfcfc;
+    padding: 19px 12px;
+}
+
+.calc-block:first-child {
+    border-right: 1px solid #e3e3e3;
+}
+
+/* Цвет линии из бутстрапа не подошел */
+hr {
+    border-top: 1px solid #e3e3e3;
+}
+
+/* Этот стиль из бутстрапа тоже не подошел */
+.progress {
+    background-color: #fcfcfc;
+    background-image: none;
+}
+
+/*For tabs - Begin*/
+.nav.nav-tabs {
+    margin-bottom: 0px;
+}
+
+.nav-tabs > li > a {
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.nav.nav-tabs > li > a {
+    color: black;
+    text-align: center;
+}
+
+.nav.nav-tabs > li > a{
+background-color: #5ca135;
+/* color: black; */
+/*    background-color: #e6f5bf;*/
+    color: black;
+    text-align: center;
+}
+
+.nav.nav-tabs > .active > a, .nav-tabs > .active {
+    background-color: #5CA135;
+    color: white;
+    margin-right: 0;
+    border-left: 0;   /* @@@ border-right: 0; */
+    text-align: center;
+}
+
+/*For tabs - End*/
+
+#calculator-module span {
+	font-size: 1.2em;
+}
+
+#calculator-module .bar {
+	width: 100% !important;
+}
+.calculator-column {
+	box-shadow: none;
+
+    /* center */
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    /*display: table;*/
+}
+
+.bar-main-amount {
+	background-image: none !important;
+	/*background-color: #818181 !important;*/
+	background-color: #C1C0C0 !important;
+}
+.bar-monthly-refill-amount {
+	background-image: none !important;
+	/*background-color: #9F9F9F !important;*/
+	background-color: #D4D1D1 !important;
+	/*9f = 159; P: 13*/
+}
+.bar-monthly-percents {
+	background-image: none !important;
+	background-color: #75C038 !important;
+}
+.bar-monthly-percents-bonusplus {
+	background-image: none !important;
+	/*background-color: #1D9400 !important;*/
+	background-color: #1D9400 !important;
+	/* 29 148*/
+}
+.bar-hidden {
+	background-image: none !important;
+	background-color: #F5F5F5 !important;
+	visibility: hidden;
+}
+.dropdown-toggle {
+	/*min-width: 200px;*/
+}
+
+.calculator-row {
+	min-height: 81px;
+}
+
+@media(min-width:768px) {
+    #calculator-module  .calculator-row, #calculator-module .fixed-height-parent {
+        height: 81px;
+    }
+
+    #calculator-module  .fixed-height-body {
+        display:-moz-inline-box;
+        display:inline-block;
+        vertical-align:middle;
+        zoom:1;
+        //display:inline;
+        width:94%;
+    }
+
+    #calculator-module  .fixed-height-helper {
+        display:-moz-inline-box;
+        display:inline-block;
+        vertical-align:middle;
+        height:100%;
+        width:0px;
+        zoom:1;
+        //display:inline;
+    }
+}
+
+
+.deposit-select-value:link { color: black; }
+.deposit-select-value:visited { color: black; }
+.deposit-select-value:hover { color: black; }
+.deposit-select-value:active { color: black; }
+.deposit-select-value.btn-large { padding-left: 0px; }
+.deposit-select-value { font-size: 16pt !important; }
+
+.slider.slider-horizontal {
+	width:100%;
+}
+.slider-row {
+	margin-bottom: 5px;
+}
+.slider-spn-row {
+	position:relative;
+	white-space: nowrap;
+	/*left: -10px;*/
+}
+.slider-value {
+	max-width: 88px;
+	min-height: 30px;
+	height: 30px;
+	margin-bottom: 0 !important;
+}
+.slider-value.error{border-color: rgb(169, 68, 66);box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;}
+.slider-value.error:focus{border-color: rgb(169, 68, 66);box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 6px rgb(206, 132, 131)}
+.percent-rate-p .errorMSG{padding:0;}   /* фикс этого стиля из forms.css */
+
+.slider-selection {
+    background-color: #92c962;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    height: 50px;
+    background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,rgba(255,255,255,0.15)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(255,255,255,0.15)),color-stop(0.75,rgba(255,255,255,0.15)),color-stop(0.75,transparent),to(transparent));
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+    background-image: -moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+}
+.slider.slider-horizontal .slider-track {
+    background-color: #e8e8e8;
+    color: #e8e8e8;
+    height: 17px;
+}
+.slider-handle {
+    background-color: #509430;
+    background-image: -webkit-linear-gradient(top, #509430, #509430);
+    background-image: -moz-linear-gradient(top, #509430, #509430);
+    background-image: linear-gradient(to bottom, #509430, #509430);
+    height: 27px;
+    width: 21px;
+    opacity: 1;
+}
+
+
+#calculator-module  .greentab li {
+	margin-left: 2px;
+}
+
+.centered-pills ul.nav-pills { display:inline-block; }
+/*.centered-pills { text-align:center; }
+.centered-pills li { display:inline; }
+.centered-pills a { float:left; }*/
+* html .centered-pills ul.nav-pills { display:inline; } /* IE6 */
+*+html .centered-pills ul.nav-pills { display:inline; } /* IE7 */
+
+
+.span-percents-full, .span-percents-bonusplus {
+	font-size: 23px;
+	font-weight: bold;
+}
+.span-percents-full { color: black; }
+.span-percents-bonusplus { color: #1d9400; }
+
+.span-invest-amount { margin-left: 0px !important; }
+.span-final-amount { margin-left: 0px !important; }
+
+.percent-rate-span .rate-text {
+    font-size: 16pt !important;
+    font-weight:bold;
+}
+
+.percent-rate-span #main-rate-change {
+    vertical-align: top;
+    margin: 1px;
+    cursor: pointer;
+}
+
+.percent-rate-span #bonusplus-rate-span {
+    font-size: 10pt;
+}
+.percent-rate-p {
+    margin: 0;
+}
+.percent-rate-p.bonusplus-row {
+    text-align: center;
+}
+@media(min-width:768px) {
+   .percent-rate-p { text-align: right; }
+}
+
+.input-append .add-on {
+    margin-top: -2px;
+    height: 30px;
+    padding: 1px 0;
+}
+
+.well {
+  border-radius: 6px;
+  margin-bottom: 0px;
+}
+
+.centerstyle-always {
+    text-align: center;
+}
+
+.value-span #longation_value {
+    font-size: 20pt;
+}
+
+.calculator-switcher {
+	/*background: #5ca135;
+	background: #e0dede;/*#e6f5bf;*/
+	/*margin:0 0 35px;*/
+	width:100%;
+}
+
+.calculator-switcher li {
+    text-align:center;
+    width:48%;
+}
+.calculator-switcher li:first-child {
+    margin-right:4%;
+}
+
+.calculator-switcher li > a {
+	width:140px;
+    display:inline-block;
+    text-align:center;
+    margin-left: 2px;
+}
+
+.calculator-switcher a > img {
+    padding-right:10px;
+    filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);
+    opacity:0.5;
+}
+
+.calculator-switcher a:hover {
+    color: black;
+}
+.calculator-switcher .active a,
+.calculator-switcher .active a:hover,
+.calculator-switcher .active a:focus {
+    /*background-color: #5ca135 !important;
+	  color: black;*/
+	background: transparent;
+	border: 2px solid #5ca135;
+    color: #444;
+}
+
+.calculator-switcher .active a > img {
+    filter:grayscale(0);-webkit-filter:grayscale(0);-moz-filter:grayscale(0);
+    opacity:1;
+}
+
+
+.output-percents-btn,.tax-btn{font-size:12px;}
+
+.output-percents-btn a, .tax-btn a { border: 2px solid rgb(204, 204, 204); color: rgb(187, 187, 187)}
+
+.profitTool {
+    display: inline-block;
+    vertical-align: text-bottom;
+    font-size: 10px;
+}
+.profitTool span{
+    max-width:150px;
+}
+
+.noFirstChargeBlock {display: flex;}
+.noFirstChargeBlock-text {font-size: 16px;margin-left: 5px;margin-top: 4px;}

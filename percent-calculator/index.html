@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://deposits.privatbank.ua/static/app/calc.htm?from=null&locale=RU&csid=null -->
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Maxim Sokhatsky">
+    <title>Депозитный Калькулятор</title>
+
+    <link href="./css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./bootstrap-slider.css">
+    <link rel="stylesheet" href="./forms.css">
+    <link rel="stylesheet" href="./calendar.css">
+    <link rel="stylesheet" href="./calc.css" type="text/css" media="screen, handheld">
+
+    <script type="text/javascript" src="./jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="./bootstrap.min.js"></script>
+    <script type="text/javascript" src="./bootstrap-slider.js"></script>
+    <style type="text/css">
+        .dropdown-deposits {
+            white-space: normal;
+            min-width: 430px
+        }
+
+        .dropdown-deposits>ul>li>a {
+            white-space: normal
+        }
+
+        .cur-marg {
+            margin-bottom: 10px
+        }
+
+        .centered-pills>ul {
+            margin-bottom: 0
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="app" style="filter: grayscale(0%);">
+
+        <div id="pageHeader" class="box">
+            <!-- тут размещается контент который производится при помощи deposits_header:initHeader/2 -->
+        </div>
+
+        <div class="tabbable">
+
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="s2">
+
+                    <div class="box submenu_box" style="display: none">
+                        <ul id="deposit-currency-select" class="menu submenu cur left">
+                            <!-- сюда добавляется курс валют  -->
+                        </ul>
+                    </div>
+
+                    <div id="calculator-module" class="calc-block">
+                        <div class="row-fluid">
+                            <div class="span8 calc-block">
+                                <div class="row-fluid calculator-row">
+                                    <div class="span12 fixed-height-parent">
+                                        <div class="fixed-height-body">
+                                            <div class="btn-group dropdown-deposits">
+                                                <a href="#"
+                                                    class="btn-large dropdown-toggle dropdown-value deposit-select-value"
+                                                    data-toggle="dropdown">
+                                                    <span class="caret"></span>
+                                                </a>
+                                                <ul class="dropdown-menu deposit-select" aria-labelledby="dLabel">
+                                                    <!-- здесь доступные вклады -->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="fixed-height-helper"></div>
+                                    </div>
+                                </div>
+
+                                <div class="calculator-deposit-details">
+                                    <div class="row-fluid calculator-row for-slider">
+                                        <div class="span3 fixed-height-parent">
+                                            <div class="fixed-height-body">
+                                                <span>Ставка (в год) / срок (мес.)</span>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span7">
+                                            <p class="slider-row slider-spn-row rates-row">
+                                                <!-- ставки по процентам -->
+                                            </p>
+                                            <p class="">
+                                                <!-- слайдер -->
+                                                <input id="slider-term" class="slider slider-horizontal" type="text"
+                                                    style="display: none;" data-value="5" value="5">
+                                            </p>
+                                            <p class="slider-row slider-spn-row terms-row">
+                                                <!-- сроки депозитов -->
+                                            </p>
+
+
+                                        </div>
+                                        <div class="span2 percent-rate-span centerstyle-always calculator-row">
+                                            <div class="fixed-height-body">
+                                                <p class="percent-rate-p">
+                                                    <span id="main-rate-span" class="rate-text">11%</span>
+                                                    <img id="main-rate-change" src="./edit.png">
+                                                </p>
+                                                <p class="percent-rate-p bonusplus-row" style="display: none;">
+                                                    <a class="tooltips" tabindex="-1" href="javascript:void(0);">
+                                                        <img src="./klubnichka-icon_12.png"><b id="bonusplus-rate-span"
+                                                            style="font-weight:normal">0%</b>
+                                                        <span class="bottom"
+                                                            style="width:230px;margin-left:-145.5px;font-size:12px">0%
+                                                            из 11% ежемесячно будут начисляться на Ваш счет «Бонус
+                                                            Плюс»</span>
+                                                    </a>
+                                                </p>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-fluid calculator-row" style="display:none">
+                                        <div class="span3 fixed-height-parent">
+                                            <div class="fixed-height-body">
+                                                <span>Период получения</span>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span3 centerstyle fixed-height-parent">
+                                            <div class="fixed-height-body input-append">
+                                                <input type="text" id="input-term" class="slider-value no-slider">
+                                                <span class="add-on"><img src="./calendar.png"></span>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span3 percent-rate-span fixed-height-parent">
+                                            <div class="fixed-height-body" style="padding-left:7px">
+                                                <span>Срок &nbsp;</span>
+                                                <span id="days-term-span" class="rate-text">90 дней</span>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span3 percent-rate-span fixed-height-parent">
+                                            <div class="fixed-height-body centered-pills">
+                                                <span>Ставка &nbsp;</span>
+                                                <span id="days-rate-span" class="rate-text">16%</span>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-fluid calculator-row for-slider">
+                                        <div class="span3 fixed-height-parent">
+                                            <div class="fixed-height-body">
+                                                <span>Сумма</span>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span7">
+                                            <p class="slider-row slider-spn-row">&nbsp;</p>
+                                            <p>
+                                                <!-- слайдер -->
+                                                <input id="slider-invest"
+                                                    class="slider slider-horizontal calculator-slider"
+                                                    style="display: none;" data-value="5000" value="5000">
+                                            </p>
+                                            <p class="slider-row slider-spn-row">&nbsp;</p>
+                                        </div>
+                                        <div class="span2 centerstyle fixed-height-parent">
+                                            <div class="fixed-height-body">
+                                                <input type="text" class="slider-value" id="invest_amount">
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-fluid calculator-row for-slider">
+                                        <div class="span3 fixed-height-parent">
+                                            <span class="fixed-height-body">Ежемесячное пополнение</span>
+
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span7">
+                                            <p class="slider-row slider-spn-row">&nbsp;</p>
+                                            <input id="slider-refill" class="slider slider-horizontal calculator-slider"
+                                                style="display: none;" data-value="500" value="500">
+                                            <p class="slider-row slider-spn-row">&nbsp;</p>
+                                            <div class="noFirstChargeBlock">
+                                                <div><input id="noFirstCharge" type="checkbox"></div>
+                                                <div class="noFirstChargeBlock-text">Без пополнения в первый месяц</div>
+                                            </div>
+                                        </div>
+                                        <div class="span2 centerstyle fixed-height-parent">
+                                            <div class="fixed-height-body">
+                                                <input type="text" class="slider-value" id="monthly_refill_amount">
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-fluid calculator-row for-slider">
+                                        <div class="span3 fixed-height-parent">
+                                            <span class="fixed-height-body">Количество продлений</span>
+
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span7">
+                                            <p class="slider-row slider-spn-row">&nbsp;</p>
+                                            <p>
+                                                <input id="slider-longation" class="slider slider-horizontal"
+                                                    type="text" style="display: none;" data-value="0" value="0">
+                                            </p>
+                                            <p class="slider-row slider-spn-row longation-row"></p>
+                                        </div>
+                                        <div class="span2 centerstyle-always value-span fixed-height-parent">
+                                            <div class="fixed-height-body">
+                                                <p><span id="longation-count-span">0</span></p>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-fluid calculator-row percents-row" style="display: block;">
+                                        <div class="span3 fixed-height-parent">
+                                            <span class="fixed-height-body">Проценты</span>
+
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span9 fixed-height-parent">
+                                            <div class="fixed-height-body centered-pills">
+                                                <ul class="nav nav-pills img-rounded calculator-switcher"
+                                                    id="output-percents-select">
+                                                    <li class="output-percents-btn active" id="is-capitalization"><a
+                                                            href="https://deposits.privatbank.ua/static/app/calc.htm?from=null&amp;locale=RU&amp;csid=null#"><img
+                                                                src="./dpb-icon_Capital.png">На вклад</a>
+                                                        <div>Увеличивается эффективная доходность</div>
+                                                    </li>
+                                                    <li class="output-percents-btn" id="is-not-capitalization"><a
+                                                            href="https://deposits.privatbank.ua/static/app/calc.htm?from=null&amp;locale=RU&amp;csid=null#"><img
+                                                                src="./dpb-icon_Card.png">На карту</a>
+                                                        <div>Проценты возможно сразу тратить</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row-fluid calculator-row tax-row">
+                                        <div class="span3 fixed-height-parent">
+                                            <span class="fixed-height-body">Налог</span>
+
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                        <div class="span9  fixed-height-parent">
+                                            <div class="fixed-height-body centered-pills">
+                                                <ul class="nav nav-pills img-rounded calculator-switcher"
+                                                    id="tax-select">
+                                                    <li class="tax-btn" id="is-not-tax"><a
+                                                            href="https://deposits.privatbank.ua/static/app/calc.htm?from=null&amp;locale=RU&amp;csid=null#">Без
+                                                            учёта</a></li>
+                                                    <li class="tax-btn active" id="is-tax"><a
+                                                            href="https://deposits.privatbank.ua/static/app/calc.htm?from=null&amp;locale=RU&amp;csid=null#">С
+                                                            учётом </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="fixed-height-helper"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4 calc-block">
+                                <div class="results">
+                                    <div class="span6 centerstyle">
+                                        <span>Вложил</span>
+
+                                        <h3 class="span-invest-amount">8 500</h3>
+
+                                        <div id="column1" class="progress vertical calculator-column"
+                                            style="width:120px; height: 320px;">
+                                            <div class="bar bar-monthly-percents bar-hidden" style="height: 13.5975%;"
+                                                data-original-title=""></div>
+                                            <div class="bar bar-monthly-percents-bonusplus bar-hidden"
+                                                style="height: 0%;" data-original-title=""></div>
+                                            <div class="bar bar-monthly-refill-amount" style="height: 37.3422%;"
+                                                data-original-title=""></div>
+                                            <div class="bar bar-main-amount" data-toggle="tooltip"
+                                                style="height: 49.0603%;" data-original-title=""></div>
+                                        </div>
+                                    </div>
+                                    <div class="span6 centerstyle">
+                                        <span>Получу</span>
+
+                                        <h3 class="span-final-amount">8 961</h3>
+
+                                        <div id="column2" class="progress vertical calculator-column center"
+                                            style="width:120px; height: 320px;">
+                                            <div class="bar bar-monthly-percents" style="height: 13.5975%;"
+                                                data-original-title=""></div>
+                                            <div class="bar bar-monthly-percents-bonusplus" style="height: 0%;"
+                                                data-original-title=""></div>
+                                            <div class="bar bar-monthly-refill-amount" style="height: 37.3422%;"
+                                                data-original-title=""></div>
+                                            <div class="bar bar-main-amount" style="height: 49.0603%;"
+                                                data-original-title=""></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row-fluid">
+                                    <div class="span7">
+                                        <span>Сумма вклада</span>
+                                    </div>
+                                    <div class="span5 rightstyle">
+                                        <span class="span-amt-full">5 000 (грн)</span>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span7">
+                                        <span>Сумма пополнений</span>
+                                    </div>
+                                    <div class="span5 rightstyle">
+                                        <span class="span-charge-full">3 500 (грн)</span>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span7">
+                                        <span>Процентная ставка</span>
+                                    </div>
+                                    <div class="span5 rightstyle">
+                                        <span class="span-percents-rate">11 % (в год)</span>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span7">
+                                        <span>Проценты (доход)</span>
+                                    </div>
+                                    <div class="span5 rightstyle">
+                                        <span class="span-percents-full">461 (грн)</span>
+                                    </div>
+                                </div>
+
+                                <div class="bonusplus-row" style="display: none;">
+                                    <div class="row-fluid">
+                                        <div class="span7">
+                                            <span>В том числе проценты на счет "<a href="http://bonus.privatbank.ua/"
+                                                    style="color:#0088CC;" target="_blank">Бонус плюс</a>"</span>
+                                        </div>
+                                        <div class="span5 rightstyle">
+                                            <span class="span-percents-bonusplus">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.tabbable -->
+        </div>
+
+        <br>
+
+        <!-- /container -->
+
+        <script>
+            var transition = { pid: '', port: window.location.port };
+        </script>
+
+        <script src="./bert.js"></script>
+        <script src="./client.js"></script>
+        <script src="./nitrogen.js"></script>
+        <script src="./bullet.js"></script>
+        <script src="./utf8.js"></script>
+        <script src="./template.js"></script>
+        <script src="./n2o.js"></script>
+        <script src="./calendar.js"></script>
+
+        <script src="./programs.js"></script>
+        <script src="./settings.js"></script>
+
+        <script src="./postmessage(1).js"></script>
+        <script src="./Frame.js"></script>
+        <script src="./main-calculator.min.js"></script>
+        <script src="./validation.js"></script>
+        <script src="./calc.js"></script>
+        <script>
+            initTopMenu();
+        </script>
+
+        <!-- Modal window -->
+        <div id="modal_form">
+            <div id="modalText" style="text-align:left; padding:10px 15px">
+
+            </div>
+            <div id="modalSectionBtns" class="buttons">
+                <a id="modalButton" href="javascript:void(0);" class="button sgreen"
+                    style="padding: 8px 20px;cursor: pointer;" onclick="closeModalWindow();">Ok</a>
+            </div>
+        </div>
+        <div id="overlay" class="overlay"></div>
+        <!-- end of Modal window -->
+
+    </div>
+
+</body>
+
+</html>
