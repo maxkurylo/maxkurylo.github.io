@@ -1,0 +1,128 @@
+
+:root {
+    --btn-text-color: #3B3B3B;
+    --btn-active-color: #243522;
+    --btn-active-text-color: #fff;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    /*background-color: #f9fffc;*/
+    background: linear-gradient(to right, #f9fffc, #f9fffc, #f9fffc);
+
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.photo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 8px;
+}
+
+.name {
+    margin-top: .9rem;
+    margin-bottom: 0;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.description {
+    margin-top: 0;
+    color: #5c5c5c;
+    letter-spacing: .5px;
+    font-size: 1.1rem;
+}
+
+
+/* Button styles */
+.button {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid var(--btn-active-color);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    color: var(--btn-text-color);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    min-height: 3rem;
+    min-width: 0;
+    outline: none;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 12rem;
+    will-change: transform;
+    line-height: 1;
+    letter-spacing: .5px;
+}
+
+.button:hover,
+.button:active {
+    color: var(--btn-text-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    text-decoration: none;
+}
+
+.button:focus {
+    color: var(--btn-text-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    outline: 2px solid var(--btn-active-color);
+    text-decoration: none;
+    outline-offset: 0;
+}
+
+
+.button.accent {
+    color: var(--btn-active-text-color);
+    background-color: var(--btn-active-color);
+    border-color: #fff;
+}
+
+.button.accent .icon path {
+    fill: var(--btn-active-text-color);
+}
+
+.button.accent:hover,
+.button.accent:focus {
+    color: var(--btn-active-text-color);
+}
+
+.icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-bottom: -5px;
+    margin-right: 3px;
+    margin-left: -5px;
+}
+
+
+/* Technical classes */
+
+.text-center { text-align: center; }
+.mx-1 {
+    margin-right: .25rem;
+    margin-left: .25rem;
+}
+.mt-3 { margin-top: 1rem; }
+.mb-3 { margin-bottom: 1rem; }
