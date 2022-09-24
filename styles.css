@@ -30,19 +30,20 @@
 
 html {
     font-size: 14px;
+    height: -webkit-fill-available;
 }
 
+
 body {
-    /*background-color: #f9fffc;*/
+    background-color: var(--body-color-two);
     background: linear-gradient(to right, var(--body-color-one), var(--body-color-two), var(--body-color-three));
     font-family: "Saira Condensed", sans-serif;
     color: var(--text-color);
-}
-
-.wrapper {
     display: flex;
     align-items: center;
     min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
 }
 
 
