@@ -1,8 +1,31 @@
 
 :root {
+    --text-color: #333;
+    --sub-text-color: #5c5c5c;
+
     --btn-text-color: #3B3B3B;
-    --btn-active-color: #243522;
+    --btn-color: #243522;
     --btn-active-text-color: #fff;
+
+    --body-color-one: #dee8e3;
+    --body-color-two: #f9fffc;
+    --body-color-three: #dee8e3;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e7efeb;
+        --sub-text-color: #d2d2d2;
+
+        --btn-text-color: #e7efeb;
+        --btn-color: #e7efeb;
+        --btn-active-text-color: #111;
+
+        --body-color-one: #1b2719;
+        --body-color-two: #243522;
+        --body-color-three: #1b2719;
+    }
 }
 
 html {
@@ -11,9 +34,9 @@ html {
 
 body {
     /*background-color: #f9fffc;*/
-    background: linear-gradient(to right, #f9fffc, #f9fffc, #f9fffc);
-
+    background: linear-gradient(to right, var(--body-color-one), var(--body-color-two), var(--body-color-three));
     font-family: "Saira Condensed", sans-serif;
+    color: var(--text-color);
 }
 
 .wrapper {
@@ -27,7 +50,7 @@ body {
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 2px solid #e7efeb;
     box-shadow: rgba(0, 0, 0, 0.25) 0 4px 8px;
 }
 
@@ -42,7 +65,7 @@ body {
 
 .description {
     margin-top: 0;
-    color: #5c5c5c;
+    color: var(--sub-text-color);
     letter-spacing: .5px;
     font-size: 1.1rem;
 }
@@ -52,7 +75,7 @@ body {
 .button {
     appearance: none;
     background-color: transparent;
-    border: 2px solid var(--btn-active-color);
+    border: 2px solid var(--btn-color);
     border-radius: 1rem;
     box-sizing: border-box;
     color: var(--btn-text-color);
@@ -63,7 +86,6 @@ body {
     margin: 0;
     min-height: 3rem;
     min-width: 0;
-    outline: none;
     padding: 1rem;
     text-align: center;
     text-decoration: none;
@@ -87,20 +109,12 @@ body {
 .button:focus {
     color: var(--btn-text-color);
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    outline: 2px solid var(--btn-active-color);
     text-decoration: none;
-    outline-offset: 0;
 }
-
 
 .button.accent {
     color: var(--btn-active-text-color);
-    background-color: var(--btn-active-color);
-    border-color: #fff;
-}
-
-.button.accent .icon path {
-    fill: var(--btn-active-text-color);
+    background-color: var(--btn-color);
 }
 
 .button.accent:hover,
@@ -114,6 +128,14 @@ body {
     margin-bottom: -5px;
     margin-right: 3px;
     margin-left: -5px;
+}
+
+.icon path{
+    fill: var(--btn-text-color);
+}
+
+.button.accent .icon path {
+    fill: var(--btn-active-text-color);
 }
 
 
